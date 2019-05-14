@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>btn_send</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-156.470008%" y1="144.297013%" x2="160.200384%" y2="-21.3623367%" id="linearGradient-1">
+            <stop stop-color="#33E0FF" offset="0%"></stop>
+            <stop stop-color="#0037F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Wee--M2" transform="translate(-201.000000, -1341.000000)">
+            <g id="Group-5" transform="translate(34.000000, 1309.000000)">
+                <g id="btn_send" transform="translate(167.000000, 32.000000)">
+                    <rect id="Rectangle-Copy" fill="url(#linearGradient-1)" fill-rule="nonzero" x="0" y="0" width="30" height="30" rx="15"></rect>
+                    <path d="M18.1436127,10.1620213 C18.1433893,10.0835856 18.0779145,10.020122 17.9970207,10.0198985 L11.5704351,10.0000103 C10.9675307,9.99822257 10.3885369,10.2297307 9.96261555,10.643585 L7.85714286,12.6887226 L15.3684201,12.7121863 L15.3936714,20 L17.5031665,17.9519574 C17.9288643,17.5387735 18.1670764,16.9778802 18.1650652,16.3937467 L18.1436127,10.1620213 Z" id="Fill-1" fill="#FFFFFF" transform="translate(13.011110, 15.000000) rotate(45.000000) translate(-13.011110, -15.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

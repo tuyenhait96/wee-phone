@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+*, ul{
+  padding: 0;
+  margin: 0;
+}
+
+/* ----------------- FONT-FAMILY ----------------- */
+/* - UTM Avo */
+@font-face{
+  font-family: UTMAvo;
+  src: url('./fonts/UTMAvo.ttf') format('truetype');
+}
+@font-face{
+  font-family: UTMAvoBold;
+  src: url('./fonts/UTMAvoBold.ttf') format('truetype');
+}
+/* - SVN-Rajdhani */
+@font-face{
+  font-family: SVN-RajdhaniBold;
+  src: url('./fonts/SVN-RajdhaniBold.otf') format('truetype');
+}
