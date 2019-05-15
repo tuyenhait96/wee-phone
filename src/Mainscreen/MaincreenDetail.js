@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+//Data
+import { dataContent } from '../data/dataWee';
 //Component
 import MainscreenLanguage from './MainscreenLanguage';
 import WeeLeft from './WeeLeft';
 import WeeRight from './WeeRight';
+
 
 const MaincreenDetailStyled = styled.div`
     position: absolute;
@@ -23,17 +26,38 @@ const MaincreenDetailStyled = styled.div`
             max-height: 100%;
         }
     }
-        
 `
 
 class MaincreenDetail extends Component {
+    state = {
+        slickSelected: dataContent[0],
+    }
+    selectContent(content) {
+        console.log('contentDetail from children => parent:', content)
+        this.setState({
+            slickSelected: content
+        });
+    }
+    // componentWillReceiveProps(nextProps) {
+    //     console.log(nextProps)
+    //     this.setState({
+    //         slickSelected: nextProps.slickSelected
+    //     });
+    // }
     render() {
         return (
             <MaincreenDetailStyled>
                 <MainscreenLanguage />
                 <div className = 'wee-container'>
-                    <WeeLeft contact = 'contact us' mail = 'hello@wee.vn'/>
-                    <WeeRight/>
+                    <WeeLeft 
+                        contact = 'contact us' 
+                        mail = 'hello@wee.vn'
+                        slickSelected = {this.state.slickSelected}
+                        selectContent = {this.selectContent.bind(this)}
+                        data = {dataContent}
+
+                    />
+                    <WeeRight copy = 'Copyright © 2018 - wee.vn'/>
                 </div>
             </MaincreenDetailStyled>
         );
