@@ -25,6 +25,30 @@ const BounceStyled= styled.div`
     }
 `
 class MainscreenLanguage extends Component {
+    state = {
+        pathActive: this.props.pathActive,
+        data : this.props.data
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps.pathActive)
+        this.setState({
+            pathActive: nextProps.pathActive
+        });
+    }
+    onClickMainMenu() {
+        this.props.onClickMainMenu( this.props.data.key)
+    }
+    renderMenu() {
+        return this.state.data.map((item, i) => {
+            return <li key = {i}>
+                        <Link to={item.key} 
+                        onClick = {this.onClickMainMenu.bind(this)} 
+                        style = {{opacity: this.state.pathActive === this.props.data.key ? '1' : '0.7'}}
+                        >{item.title}</Link>
+                    </li>
+        })
+    }
     render() {
         return (
             <BounceStyled>
@@ -46,15 +70,7 @@ class MainscreenLanguage extends Component {
                 </Switch> */}
                 <Router>
                     <ul>
-                        <li>
-                            <Link to="/en">EN</Link>
-                        </li>
-                        <li>
-                            <Link to="/">|</Link>
-                        </li>
-                        <li>
-                            <Link to="/vi">VI</Link>
-                        </li>
+                        {this.renderMenu()}
                     </ul>
                 </Router>
             </BounceStyled>

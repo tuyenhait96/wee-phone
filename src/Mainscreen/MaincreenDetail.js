@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 //Data
-import { dataContent } from '../data/dataWee';
+import { dataContent, menu } from '../data/dataWee';
 //Component
 import MainscreenLanguage from './MainscreenLanguage';
 import WeeLeft from './WeeLeft';
@@ -15,7 +15,7 @@ const MaincreenDetailStyled = styled.div`
     min-width: 745px;
     height: auto;
     top: 30px;
-    left: 280.7px;
+    left: 220px;
     .wee-container{
         display: flex;
     }
@@ -31,6 +31,9 @@ const MaincreenDetailStyled = styled.div`
 class MaincreenDetail extends Component {
     state = {
         slickSelected: dataContent[0],
+        // pathActive: window.location.pathname,
+        pathActive: window.location.pathname==='/'?'/en':window.location.pathname,
+        data: this.props.data
     }
     selectContent(content) {
         console.log('contentDetail from children => parent:', content)
@@ -38,16 +41,27 @@ class MaincreenDetail extends Component {
             slickSelected: content
         });
     }
-    // componentWillReceiveProps(nextProps) {
-    //     console.log(nextProps)
-    //     this.setState({
-    //         slickSelected: nextProps.slickSelected
-    //     });
-    // }
+    componentWillReceiveProps(nextProps) {
+        console.log('nextProps Detail', nextProps)
+        this.setState({
+            slickSelected: nextProps.slickSelected
+        });
+    }
+    onClickMainMenu(pathActive) {
+        this.setState({pathActive});
+    }
+    renderMenu(){
+        return this.state.data.map((item, i) => {
+            return <MainscreenLanguage data ={item}/>
+        })
+    }
     render() {
         return (
             <MaincreenDetailStyled>
-                <MainscreenLanguage />
+                <MainscreenLanguage 
+                    onClickMainMenu = {this.onClickMainMenu.bind(this)}
+                    pathActive = {this.state.pathActive} 
+                    data = {menu}/>
                 <div className = 'wee-container'>
                     <WeeLeft 
                         contact = 'contact us' 
@@ -55,7 +69,6 @@ class MaincreenDetail extends Component {
                         slickSelected = {this.state.slickSelected}
                         selectContent = {this.selectContent.bind(this)}
                         data = {dataContent}
-
                     />
                     <WeeRight copy = 'Copyright © 2018 - wee.vn'/>
                 </div>

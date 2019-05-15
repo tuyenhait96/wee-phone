@@ -34,15 +34,8 @@ class WeeLeft extends Component {
     onShowContent(content) {
         this.props.selectContent(content)
     }
-    // componentWillReceiveProps(nextProps) {
-    //     console.log(nextProps)
-    //     this.setState({
-    //         slickSelected: nextProps.slickSelected
-    //     });
-    // }
     componentWillReceiveProps(nextProps) {
-        
-        console.log(nextProps)
+        console.log('nextProp Weeleft: ', nextProps)
          this.setState({
             slickSelected: nextProps.slickSelected
         });
@@ -53,6 +46,14 @@ class WeeLeft extends Component {
                 <div className = 'logo-wee'>
                     <img src={ic_logo} alt = 'ic_logo'/>
                 </div>
+                {/* <h1>{this.title}</h1> */}
+                {
+                    this.state.slickSelected.inform.map((item, i) => {
+                        return(
+                            <h1>{item.title}</h1>
+                        )
+                    })
+                }
                 {
                     this.state.data.map((item, i) => {
                         return (

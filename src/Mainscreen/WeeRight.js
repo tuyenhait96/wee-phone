@@ -6,6 +6,7 @@ const WeeRightStyled = styled.div`
     .img-phone{
         width: 294.3px;
         padding-top: 50px;
+        padding: 50px 280.7px 0 0;
         img{
             max-width: 100%;
             max-height: 100%;
@@ -17,8 +18,7 @@ const WeeRightStyled = styled.div`
         font-size: 14px;
         text-align: right;
         color: #ffffff;
-        ${'' /* margin-left: 58px; */}
-        margin-bottom: 26px;
+        padding: 0 0 26px 58px;
     }
 `
 

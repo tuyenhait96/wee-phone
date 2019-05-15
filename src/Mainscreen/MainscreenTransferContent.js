@@ -43,6 +43,7 @@ p{
                 position: absolute;
                 top: 3px;
                 right: 3px;
+                cursor: pointer;
             }
         }
     }
@@ -62,7 +63,6 @@ class MainscreenTransferContent extends Component {
         return this.state.slickSelected.inform.map((item, i) => {
             return (
                 <div key ={i}>
-                    <h1>{item.title}</h1>
                     <p>{item.content}</p>
                     <div className = 'contact'>
                         <p>{this.props.contact}</p>
@@ -79,18 +79,6 @@ class MainscreenTransferContent extends Component {
     render() {
         return (
             <MainscreenTransferContentStyled>
-                {/* <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br/>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
-                </p>
-                <div className = 'contact'>
-                    <p>{this.props.contact}</p>
-                    <div className = 'search'>
-                        <img src = {ic_email} alt = 'ic_email' />
-                        <span>{this.props.mail}</span>
-                        <div className = 'send'></div>
-                    </div>
-                </div> */}
                 {this.renderContent()}
             </MainscreenTransferContentStyled>
         );
