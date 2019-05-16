@@ -43,7 +43,7 @@ class MainscreenContainer extends Component {
         return (
             <MainscreenContainerStyled>
                 <video className='VideoTag' autoPlay loop muted>
-                    <source src={bg_video} type='video/mp4' width = '100%'/>
+                    <source src={bg_video} type='video/mp4'/>
                 </video>
                 <div id ='bg-change'></div>
                 <MaincreenDetail data = {menu}/>

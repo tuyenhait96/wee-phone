@@ -26,6 +26,7 @@ const MaincreenDetailStyled = styled.div`
     ul{
         display: flex;
         text-align: center;
+        padding-left: 5px;
         li{
             list-style: none;
             width: 30px;
