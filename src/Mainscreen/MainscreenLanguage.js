@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const BounceStyled = styled.li`
     opacity: ${props => props.isActive ? '1' : '0.7'};
+    &:nth-child(2) {
+        opacity: 1;
+    }
 `
 
 class MainscreenLanguage extends Component {
@@ -14,22 +17,6 @@ class MainscreenLanguage extends Component {
         return (
             <BounceStyled isActive = {this.props.isActive}
             onClick = {this.pathChange.bind(this, this.props.data.key)}>
-                {/* <Switch>
-                    <Route exact path = '/en' render = {() => 
-                        <div className = 'main-screen-container'>
-                             <li>EN</li>
-                             <li>|</li>
-
-                        </div>
-                    }>
-                    </Route>
-                    <Route exact path = '/vi' render = {() => 
-                        <div className = 'main-screen-container'>
-                             <li>VI</li>
-                        </div>
-                    }>
-                    </Route>
-                </Switch> */}
                 <Router>
                     <Link to={this.props.data.key}>
                         {this.props.data.title}

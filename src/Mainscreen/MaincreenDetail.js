@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 //Data
-import { dataContent, menu } from '../data/dataWee';
+import { dataContent } from '../data/dataWee';
 //Component
 import MainscreenLanguage from './MainscreenLanguage';
 import WeeLeft from './WeeLeft';
 import WeeRight from './WeeRight';
-import { BrowserRouter as Router, Link } from "react-router-dom";
-
 
 const MaincreenDetailStyled = styled.div`
     position: absolute;
@@ -33,7 +31,6 @@ const MaincreenDetailStyled = styled.div`
             width: 30px;
             a{
                 text-decoration: none; 
-                ${'' /* opacity: 0.5; */}
                 font-family: UTMAvoBold;
                 font-size: 14px;
                 font-weight: bold;

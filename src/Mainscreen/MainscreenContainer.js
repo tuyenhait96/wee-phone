@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 //Video
 import bg_video from './../video/bg_video.mp4';
+//Data
 import { bg_color, menu } from '../data/dataWee';
+//Component
 import MaincreenDetail from './MaincreenDetail';
+
 const MainscreenContainerStyled = styled.div`
     video{
         position: fixed;
@@ -24,7 +27,6 @@ const MainscreenContainerStyled = styled.div`
         min-width: 100%;
         min-height: 100%;
     }
-    
 `
 
 class MainscreenContainer extends Component {
@@ -43,7 +45,6 @@ class MainscreenContainer extends Component {
                 <video className='VideoTag' autoPlay loop muted>
                     <source src={bg_video} type='video/mp4' width = '100%'/>
                 </video>
-                {/* <div className ='a'></div> */}
                 <div id ='bg-change'></div>
                 <MaincreenDetail data = {menu}/>
             </MainscreenContainerStyled>

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import parse from 'html-react-parser';
 
 //Image
 import ic_email from './../images/ic_email.svg';
 import btn_send from './../images/btn_send.svg';
 
 const MainscreenTransferContentStyled = styled.div`
-p{
-    font-family: UTMAvo;
-    font-size: 14px;
-    color: #ffffff;
+    p{
+        font-family: UTMAvo;
+        font-size: 14px;
+        color: #ffffff;
     }
     .contact {
         padding-top: 26px;
@@ -61,19 +61,11 @@ class MainscreenTransferContent extends Component {
             slickSelected: nextProps.slickSelected
         });
     }
-    parese(){
-        let xmlString = "<div id='foo'><a href='#'>Link</a><span></span></div>";
-        let doc = new DOMParser().parseFromString(xmlString, "text/xml");
-        console.log(doc.firstChild.innerHTML); // => <div id="foo">...
-        console.log(doc.firstChild.firstChild.innerHTML); 
-    }
-
     renderContent() {
         return this.state.slickSelected.inform.map((item, i) => {
             return (
-                <div key ={i}>
-                    <p>{item.content1}</p>
-                    <p>{item.content2}</p>
+                <div key = {i}>
+                    {parse(`${item.content}`)}
                     <div className = 'contact'>
                         <p>{this.props.contact}</p>
                         <div className = 'search'>
