@@ -6,12 +6,11 @@ import { dataContent, menu } from '../data/dataWee';
 import MainscreenLanguage from './MainscreenLanguage';
 import WeeLeft from './WeeLeft';
 import WeeRight from './WeeRight';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 const MaincreenDetailStyled = styled.div`
     position: absolute;
-    ${'' /* background: red; */}
-    ${'' /* width: 51.7%; */}
     min-width: 745px;
     height: auto;
     top: 30px;
@@ -26,14 +25,36 @@ const MaincreenDetailStyled = styled.div`
             max-height: 100%;
         }
     }
+    ul{
+        display: flex;
+        text-align: center;
+        li{
+            list-style: none;
+            width: 30px;
+            a{
+                text-decoration: none; 
+                ${'' /* opacity: 0.5; */}
+                font-family: UTMAvoBold;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                color: #ffffff;
+            }
+            &:nth-child(2){
+                width: 16px;
+            }
+        }
+    }
 `
 
 class MaincreenDetail extends Component {
     state = {
         slickSelected: dataContent[0],
-        // pathActive: window.location.pathname,
-        pathActive: window.location.pathname==='/'?'/en':window.location.pathname,
-        data: this.props.data
+        data: this.props.data,
+        pathValue : '/en'
+    }
+    pathValueChange(value) {
+        this.setState({pathValue: value});
     }
     selectContent(content) {
         console.log('contentDetail from children => parent:', content)
@@ -47,21 +68,21 @@ class MaincreenDetail extends Component {
             slickSelected: nextProps.slickSelected
         });
     }
-    onClickMainMenu(pathActive) {
-        this.setState({pathActive});
-    }
+
     renderMenu(){
         return this.state.data.map((item, i) => {
-            return <MainscreenLanguage data ={item}/>
+            return (
+                <MainscreenLanguage key = {i} data = {item} pathChange={this.pathValueChange.bind(this)}
+                    isActive = {this.state.pathValue === item.key ? true : false}/>
+                )
         })
     }
     render() {
         return (
             <MaincreenDetailStyled>
-                <MainscreenLanguage 
-                    onClickMainMenu = {this.onClickMainMenu.bind(this)}
-                    pathActive = {this.state.pathActive} 
-                    data = {menu}/>
+                <ul>
+                    {this.renderMenu()}
+                </ul>
                 <div className = 'wee-container'>
                     <WeeLeft 
                         contact = 'contact us' 

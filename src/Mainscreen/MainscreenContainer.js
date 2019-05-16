@@ -9,10 +9,10 @@ const MainscreenContainerStyled = styled.div`
         position: fixed;
         right: 0;
         top: 0;
+        width: auto;
+        height: auto;
         min-width: 100%;
         min-height: 100%;
-        ${'' /* width: auto;
-        height: auto; */}
         z-index: -100;
     }
     #bg-change{
